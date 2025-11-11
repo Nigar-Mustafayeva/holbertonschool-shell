@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#This script is displaying the "Best School" 10 times
 n=10
 for (( i=1 ; i<=$n ; i++ )); 
 do

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+export i=0
+while [ $i -lt 10 ]
+do
+  n="Best School"
+  echo "$n"
+  i=$(( i + 1))
+ if [ $i -eq 9 ];
+then 
+   echo Hi
+fi 
+done

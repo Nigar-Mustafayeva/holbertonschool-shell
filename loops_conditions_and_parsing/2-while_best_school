@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+export i=0
+while [ $i -le 10 ]
+do
+	echo Best School
+	i=$((i + 1))
+done

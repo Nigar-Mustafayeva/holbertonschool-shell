@@ -3,5 +3,5 @@
 for i in {1..10};
 do
 	export i="Best School"
-	echo $i
+	echo "$i"
 done

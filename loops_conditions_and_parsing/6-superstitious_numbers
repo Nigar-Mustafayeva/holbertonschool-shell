@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Use case statement inside of while loop
 export i=1
 while [ $i -le 20 ]
 do  

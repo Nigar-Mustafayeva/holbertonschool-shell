@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#use if statement in bash shell scripting
 export i=0
 while [ $i -lt 10 ]
 do

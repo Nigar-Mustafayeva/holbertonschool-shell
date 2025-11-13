@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#This is how untill loop work in shell scripting
+export i=0;
+until [ $i -gt 10 ];
+do 
+   n="Best School"
+   echo "$n"
+   i=$(( i + 1))
+done

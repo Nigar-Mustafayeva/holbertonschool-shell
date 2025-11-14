@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 #This is displaying the content of directory with for loop
-ls > output.txt
-for (( i=0; i < 1; i++ ));
-do 
-    cat output.txt | tr " " "\n"	
+for item in *; do
+    echo "$item"
 done

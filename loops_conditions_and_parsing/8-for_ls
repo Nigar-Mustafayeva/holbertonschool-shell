@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-#This is displaying the content of directory with for loop
-for item in *; do
-    echo "$item"
+# Display directory contents after removing the part before the first dash
+
+for file in *; do
+    # Extract the part after the first '-'
+    new_name="${file#*-}"
+
+    echo "$new_name"
 done

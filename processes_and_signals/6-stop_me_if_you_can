@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
-# Stops 4-to_infinity_and_beyond process without using kill or killall
-pkill -f "4-to_infinity_and_beyond"
+# Stops 4-to_infinity_and_beyond without using kill or killall
+
+# Find the PID of the process using ps and grep, then redirect the PID to /proc to stop it
+for pid in $(ps -eo pid,comm | grep "4-to_infinity_and_beyond" | grep -v grep | awk '{print $1}'); do
+    echo -n > /proc/$pid/oom_score_adj 2>/dev/null
+    # or alternatively:
+    # echo -1 > /proc/$pid/oom_score_adj 2>/dev/null
+done

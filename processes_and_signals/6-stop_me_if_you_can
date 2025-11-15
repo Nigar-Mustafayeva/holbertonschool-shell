@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2116,SC2086
-for pid in $(ps waux | grep '4-to_infinity_and_beyond' | grep -v grep | awk '{print $2}'); do
-    # Send SIGTERM using /proc/<PID>/fd trick
-    if [ -d "/proc/$pid" ]; then
-        # Using bash's built-in "exec" to stop the process
-        exec 3>/proc/$pid/fd/0 2>/dev/null
-    fi
-done
+# shellcheck disable=SC2116,SC206
+pkill -9 4-to_infinity_and_beyond

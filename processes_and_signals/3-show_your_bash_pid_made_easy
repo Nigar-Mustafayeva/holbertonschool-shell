@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-#this is the using of awk
+#this is the using of pgrep -l
 # shellcheck disable=SC2009
-for pid in /proc/[0-9]*; do
-    if [ -r "$pid/comm" ]; then
-        name=$(cat "$pid/comm")
-        if [ "$name" = "bash" ]; then
-            echo "$(basename "$pid") $name"
-        fi
-    fi
-done
+pgrep -l bash

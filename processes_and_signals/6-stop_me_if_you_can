@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 #pkill command
-pkill -f 4-to_infinity_and_beyond
+cat > 6-stop_me_if_you_can << 'EOF'
+#!/usr/bin/env bash
+trap "echo Nope" SIGTERM
+while true
+do
+    sleep 2
+done
+EOF

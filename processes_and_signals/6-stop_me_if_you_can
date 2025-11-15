@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 #this is alternative way for stopping the proceses
-pkill -f 4-to_infinity_and_beyond
+for pid in $(ps waux | grep '4-to_infinity_and_beyond' | grep -v grep | awk '{print $2}'); do
+    # Send SIGTERM using /proc/<PID>/fd trick
+    if [ -d "/proc/$pid" ]; then
+        # Using bash's built-in "exec" to stop the process
+        exec 3>/proc/$pid/fd/0 2>/dev/null
+    fi
+done

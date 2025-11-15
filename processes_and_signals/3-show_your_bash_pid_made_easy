@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #this is the using of awk
-ps aux >> output
-awk '{print $2, $11}' output 
+ps aux > output
+awk '{print $2, $11}' output

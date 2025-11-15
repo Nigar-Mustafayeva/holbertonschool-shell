@@ -2,10 +2,12 @@ USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.0   2892   944 ?        Ss   10:26   0:00 /bin/sh -c echo root:`echo $HOSTNAME | cut -d '-' -f 1` | chpasswd && service ssh restart > /dev/null && /etc/run.sh
 root        25  0.0  0.1  15440  3664 ?        Ss   10:26   0:00 sshd: /usr/sbin/sshd [listener] 0 of 10-100 startups
 root        26  0.0  0.1   4364  3256 ?        S    10:26   0:00 /bin/bash /etc/run.sh
-root        47  0.3  0.2  20568  5764 ?        Sl   10:26   0:05 ttyd --cwd /root --writable --credential=0ef6211d86d143b2b210dbcfb67e2bda:0ef6211d86d143b2b210dbcfb67e2bda -p 3001 /bin/bash
+root        47  0.2  0.2  20568  5764 ?        Sl   10:26   0:05 ttyd --cwd /root --writable --credential=0ef6211d86d143b2b210dbcfb67e2bda:0ef6211d86d143b2b210dbcfb67e2bda -p 3001 /bin/bash
 root        55  0.0  0.0   2892   960 ?        S    10:26   0:00 sh /usr/bin/openvscode-server --host 0.0.0.0 --connection-token=0ef6211d86d143b2b210dbcfb67e2bda --log off 2
-root        61  0.0  2.6 914648 51760 ?        Sl   10:26   0:00 /usr/node /usr/out/server-main.js --host 0.0.0.0 --connection-token=0ef6211d86d143b2b210dbcfb67e2bda --log off 2
-root        72  0.0  2.2 643072 45100 ?        Sl   10:26   0:00 /usr/node /usr/out/bootstrap-fork --type=ptyHost --logsPath /root/.openvscode-server/data/logs/20251115T102617
+root        61  0.0  2.6 914648 52140 ?        Sl   10:26   0:00 /usr/node /usr/out/server-main.js --host 0.0.0.0 --connection-token=0ef6211d86d143b2b210dbcfb67e2bda --log off 2
+root        72  0.0  2.2 643072 44340 ?        Sl   10:26   0:00 /usr/node /usr/out/bootstrap-fork --type=ptyHost --logsPath /root/.openvscode-server/data/logs/20251115T102617
 root       102  0.0  0.1   4628  3840 pts/0    Ss   10:26   0:00 /bin/bash
-root       221  0.0  0.1   4364  3148 pts/0    S+   10:53   0:00 bash ./3-show_your_bash_pid_made_easy
-root       222  0.0  0.0   7064  1580 pts/0    R+   10:53   0:00 ps aux
+root       254  0.0  0.1   4364  3256 pts/0    T    10:58   0:00 bash ./3-show_your_bash_pid_made_easy
+root       255  0.0  0.0   3916  1352 pts/0    T    10:58   0:00 awk {print $2, $11}
+root       257  0.0  0.1   4364  3060 pts/0    S+   10:59   0:00 bash ./3-show_your_bash_pid_made_easy
+root       258  0.0  0.0   7064  1548 pts/0    R+   10:59   0:00 ps aux

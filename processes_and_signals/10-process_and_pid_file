@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# File: 10-process_and_pid_file
+# Handles PID file and signals
+
+PID_FILE="/var/run/myscript.pid"
+
+# Write PID to file
+echo $$ > "$PID_FILE"
+
+# Signal handlers
+handle_sigint() {
+    echo "Y U no love me?!"
+}
+
+handle_sigterm() {
+    echo "I hate the kill command"
+    [ -f "$PID_FILE" ] && rm -f "$PID_FILE"
+    exit 0
+}
+
+handle_sigquit() {
+    [ -f "$PID_FILE" ] && rm -f "$PID_FILE"
+    exit 0
+}
+
+# Trap signals
+trap 'handle_sigint' SIGINT
+trap 'handle_sigterm' SIGTERM
+trap 'handle_sigquit' SIGQUIT
+
+# Infinite loop
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done

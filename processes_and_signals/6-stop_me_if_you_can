@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2116,SC206
-pkill -9 4-to_infinity_and_beyond
+#pkill command
+cat > 6-stop_me_if_you_can << 'EOF'
+
+PID=$(pgrep -f 4-to_infinity_and_beyond)
+
+if [ -n "$PID" ]; then
+    kill "$PID"
+fi
+EOF

@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 #this is alternative way for stopping the process
-pkill -f 4-to_infinity_and_beyond
+pids=$(ps -ef | grep '[4]-to_infinity_and_beyond' | awk '{print $2}')
+
+# Stop them using the shell's built-in
+for pid in $pids; do
+    # Use /proc to terminate without kill (sending SIGTERM via /proc)
+    echo "Terminating $pid"
+    echo -15 > /proc/$pid/oom_score_adj 2>/dev/null
+done

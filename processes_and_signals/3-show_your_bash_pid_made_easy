@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #this is the using of awk
 # shellcheck disable=SC2009
-ps aux | grep "bash" > output
+ps aux | grep -w "bash" > output
 awk '{print $2, $11}' output

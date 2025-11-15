@@ -1,6 +1,6 @@
 root        26  0.0  0.1   4364  3256 ?        S    10:26   0:00 /bin/bash /etc/run.sh
-root        47  0.2  0.2  20568  5764 ?        Sl   10:26   0:05 ttyd --cwd /root --writable --credential=0ef6211d86d143b2b210dbcfb67e2bda:0ef6211d86d143b2b210dbcfb67e2bda -p 3001 /bin/bash
+root        47  0.1  0.2  20568  5764 ?        Sl   10:26   0:05 ttyd --cwd /root --writable --credential=0ef6211d86d143b2b210dbcfb67e2bda:0ef6211d86d143b2b210dbcfb67e2bda -p 3001 /bin/bash
 root       102  0.0  0.1   4628  3844 pts/0    Ss   10:26   0:00 /bin/bash
 root       254  0.0  0.1   4364  3256 pts/0    T    10:58   0:00 bash ./3-show_your_bash_pid_made_easy
-root       332  0.0  0.1   4364  3216 pts/0    S+   11:10   0:00 bash ./3-show_your_bash_pid_made_easy
-root       334  0.0  0.0   1136   296 pts/0    R+   11:10   0:00 grep bash
+root       349  0.0  0.1   4364  3256 pts/0    S+   11:17   0:00 bash ./3-show_your_bash_pid_made_easy
+root       351  0.0  0.0   3472  1560 pts/0    S+   11:17   0:00 grep -w bash
